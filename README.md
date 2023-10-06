@@ -1,73 +1,62 @@
-# Langchain
-# Getting Started
+<h1>Pip Commands</h1>
 
+`pip install langchain`
 
-How to install LangChain in Python
+This will install the bare minimum requirements of LangChain. A lot of the value of LangChain comes when integrating it with various model providers, datastores, etc. By default, the dependencies needed to do that are NOT installed. However, there are two other ways to install LangChain that do bring in those dependencies.
 
-To install LangChain, you can use the following command:
+To install modules needed for the common LLM providers, run:
+
+`pip install langchain[llms]`
+
+To install all modules needed for all integrations, run:
+
+`pip install langchain[all]`
+
+Note that if you are using zsh, you'll need to quote square brackets when passing them as an argument to a command, for example:
+
+`pip install 'langchain[all]'`
+
+From source
+If you want to install from source, you can do so by cloning the repo and be sure that the directory is PATH/TO/REPO/langchain/libs/langchain running:
+
+`pip install -e .`
+
+<h1>Installation</h1>
+
+**To install LangChain run:**
 
 `pip install langchain`
 
 
-If you are using Conda, you can install LangChain using the following command:
+
+<h1>Conda Command</h1>
 
 `conda install langchain -c conda-forge`
 
-If you want to install LangChain from source, you can do so by cloning the repository and running the following command:
+This will install the bare minimum requirements of LangChain. A lot of the value of LangChain comes when integrating it with various model providers, datastores, etc. By default, the dependencies needed to do that are NOT installed. However, there are two other ways to install LangChain that do bring in those dependencies.
+
+To install modules needed for the common LLM providers, run:
+
+`pip install langchain[llms]`
+
+To install all modules needed for all integrations, run:
+
+`pip install langchain[all]`
+
+Note that if you are using zsh, you'll need to quote square brackets when passing them as an argument to a command, for example:
+
+`pip install 'langchain[all]'`
+
+From source
+If you want to install from source, you can do so by cloning the repo and be sure that the directory is PATH/TO/REPO/langchain/libs/langchain running:
 
 `pip install -e .`
 
-Once LangChain is installed, you can start using it in Python by importing the langchain package:
+<h1>Installation</h1>
 
-*Python:*
+**To install LangChain run:**
 
-`import langchain`
+`conda install langchain -c conda-forge`
 
-To use LangChain to generate text, you can use the llm.predict() method. This method takes a prompt as input and returns a generated text response. For example, the following code generates a poem about a cat:
 
-*Python:*
-
-`from langchain.llms import OpenAI`
-
-`llm = OpenAI()`
-
-`prompt = "Write a poem about a cat."`
-
-`response = llm.predict(prompt)`
-
-`print(response)`
-
-<h2>Output:</h2>
-
-**A furry friend, a playful pet,
-The cat is loved by all.
-With big green eyes and velvet paws,
-It's the cutest animal of all.**
-
-Example usage
-
-The following example shows how to use LangChain to answer a question about the meaning of life:
-
-*Python:*
-
-`from langchain.llms import OpenAI`
-
-`llm = OpenAI()`
-
-`question = "What is the meaning of life?"`
-
-`response = llm.predict(question)`
-
-`print(response)`
-
-<h2>Output:</h2>
-
-**The meaning of life is a question that has been pondered by philosophers and theologians for centuries. There is no one answer that will satisfy everyone, but some possible answers include:**
-
-**To find happiness and fulfillment.
-To make a difference in the world.
-To learn and grow as a person.
-To experience the beauty of the world.
-To connect with others and build relationships.
-Ultimately, the meaning of life is up to each individual to decide.**
 
