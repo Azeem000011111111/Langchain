@@ -276,8 +276,8 @@ Prompt templates are a powerful way to use LangChain to generate text. They allo
             return text.strip().split(", ")
 
     template = """You are a helpful assistant who generates comma separated lists.
-    A user will pass in a category, and you should generate 5 objects in that category in a        comma separated list.
-    ONLY return a comma separated list, and nothing more."""
+        A user will pass in a category, and you should generate 5 objects in that category in         a comma separated list.
+        ONLY return a comma separated list, and nothing more."""
     
     human_template = "{text}"
 
@@ -285,7 +285,9 @@ Prompt templates are a powerful way to use LangChain to generate text. They allo
         ("system", template),
         ("human", human_template),
     ])
+    
     chain = chat_prompt | ChatOpenAI() | CommaSeparatedListOutputParser()
+    
     chain.invoke({"text": "colors"})
 ***Output:***
 > >> ['red', 'blue', 'green', 'yellow', 'orange']
