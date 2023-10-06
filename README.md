@@ -58,7 +58,7 @@ If you want to install from source, you can do so by cloning the repo and be sur
 **To install LangChain run:**
 
 `conda install langchain -c conda-forge`
-<hr>
+
 
 <h2>Environment setup</h2>
 
