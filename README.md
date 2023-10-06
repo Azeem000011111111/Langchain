@@ -145,6 +145,7 @@ LangChain also provides a standard interface for both LLMs and ChatModels, with 
 
 
 The OpenAI and ChatOpenAI objects are basically just configuration objects. You can initialize them with parameters like temperature and others, and pass them around.
+<hr>
 
 ***Next, let's use the predict method to run over a string input.***
 
@@ -156,7 +157,7 @@ The OpenAI and ChatOpenAI objects are basically just configuration objects. You 
 `chat_model.predict(text)`
 > >>> Socks O'Color
 
-Finally, let's use the predict_messages method to run over a list of messages.
+***Finally, let's use the predict_messages method to run over a list of messages.***
 
 `from langchain.schema import HumanMessage`
 
