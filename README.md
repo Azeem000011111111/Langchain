@@ -337,6 +337,23 @@ The type of the input varies by component:
         <th>Component</th>
         <th>Input Type</th>
     </tr>
+    <tr>
+        <td>Retriever</td>
+        <td>LLM, ChatModel</td>
+        <td>Tool</td>
+        <td>OutputParser</td>
+    </tr>
+    <tr>
+        <td>Single string</td>
+        <td>Single string, list of chat messages or a PromptValue</td>
+        <td>Single string, or dictionary, depending on the tool</td>
+        <td>The output of an LLM or ChatModel</td>
+    </tr>
     
 </table>
 
+Prompt	Dictionary
+	
+	
+	
+	
