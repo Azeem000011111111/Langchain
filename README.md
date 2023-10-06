@@ -58,7 +58,7 @@ If you want to install from source, you can do so by cloning the repo and be sur
 **To install LangChain run:**
 
 `conda install langchain -c conda-forge`
-
+<hr>
 
 <h2>Environment setup</h2>
 
@@ -77,5 +77,25 @@ If you'd prefer not to set an environment variable you can pass the key in direc
 `from langchain.llms import OpenAI`
 
 `llm = OpenAI(openai_api_key="...")`
+
+<hr>
+
+
+
+<h2>Building an application</h2>
+
+
+LangChain is a framework for building language model applications. It provides modules that can be used as stand-alones or combined for more complex use cases. The most common chain contains three things:
+
+1. LLM: The language model is the core reasoning engine.
+2. Prompt Templates: This provides instructions to the language model.
+3. Output Parsers: These translate the raw response from the LLM to a more workable format.
+
+***This getting started guide will cover those three components and how to combine them. Understanding these concepts will set you up well for being able to use and customize LangChain applications.***
+
+<hr>
+
+
+
 
 
