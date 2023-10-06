@@ -58,6 +58,24 @@ If you want to install from source, you can do so by cloning the repo and be sur
 **To install LangChain run:**
 
 `conda install langchain -c conda-forge`
+<hr>
 
+<h2>Environment setup</h2>
+
+Using LangChain will usually require integrations with one or more model providers, data stores, APIs, etc. For this example, we'll use OpenAI's model APIs.
+
+First we'll need to install their Python package:
+
+`pip install openai`
+
+Accessing the API requires an API key, which you can get by creating an account and heading here. Once we have a key we'll want to set it as an environment variable by running:
+
+`export OPENAI_API_KEY="..."`
+
+If you'd prefer not to set an environment variable you can pass the key in directly via the openai_api_key named parameter when initiating the OpenAI LLM class:
+
+`from langchain.llms import OpenAI`
+
+`llm = OpenAI(openai_api_key="...")`
 
 
