@@ -358,8 +358,7 @@ The type of the input varies by component:
     
 </table>
 
-Prompt	Dictionary
-	
+
 	
 	
 	
