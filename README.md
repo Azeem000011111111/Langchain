@@ -19,13 +19,13 @@ If you want to install LangChain from source, you can do so by cloning the repos
 
 Once LangChain is installed, you can start using it in Python by importing the langchain package:
 
-Python:
+*Python:*
 
 `import langchain`
 
 To use LangChain to generate text, you can use the llm.predict() method. This method takes a prompt as input and returns a generated text response. For example, the following code generates a poem about a cat:
 
-Python:
+*Python:*
 
 `from langchain.llms import OpenAI`
 
@@ -37,18 +37,18 @@ Python:
 
 `print(response)`
 
-Output:
+<h2>Output:</h2>
 
-A furry friend, a playful pet,
+**A furry friend, a playful pet,
 The cat is loved by all.
 With big green eyes and velvet paws,
-It's the cutest animal of all.
+It's the cutest animal of all.**
 
 Example usage
 
 The following example shows how to use LangChain to answer a question about the meaning of life:
 
-Python:
+*Python:*
 
 `from langchain.llms import OpenAI`
 
@@ -62,12 +62,12 @@ Python:
 
 <h2>Output:</h2>
 
-The meaning of life is a question that has been pondered by philosophers and theologians for centuries. There is no one answer that will satisfy everyone, but some possible answers include:
+**The meaning of life is a question that has been pondered by philosophers and theologians for centuries. There is no one answer that will satisfy everyone, but some possible answers include:**
 
-To find happiness and fulfillment.
+**To find happiness and fulfillment.
 To make a difference in the world.
 To learn and grow as a person.
 To experience the beauty of the world.
 To connect with others and build relationships.
-Ultimately, the meaning of life is up to each individual to decide.
+Ultimately, the meaning of life is up to each individual to decide.**
 
