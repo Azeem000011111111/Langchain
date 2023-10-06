@@ -291,3 +291,20 @@ Prompt templates are a powerful way to use LangChain to generate text. They allo
     chain.invoke({"text": "colors"})
 ***Output:***
 > >> ['red', 'blue', 'green', 'yellow', 'orange']
+
+
+# LangChain Expression Language (LCEL)
+
+
+LangChain Expression Language (LCEL) is a way to write LangChain chains in a declarative manner. This has several benefits, including:
+
+* Async, batch, and streaming support: Chains written in LCEL automatically have support for async, batch, and streaming operations. This makes it easy to prototype a chain in a Jupyter notebook using the sync interface, and then expose it as an async streaming interface.
+
+* Fallbacks: LCEL makes it easy to attach fallbacks to any chain. This is important for handling the non-determinism of LLMs.
+*Parallelism: LCEL automatically runs any components that can be run in parallel in parallel. This is important for LLM applications, which often involve long API calls.
+
+* Seamless LangSmith tracing integration: LCEL automatically logs all steps of a chain to LangSmith for observability and debuggability.
+
+Summary in simple terms:
+
+***LCEL is a way to write LangChain chains that is easier to use and more efficient. It provides automatic support for async, batch, and streaming operations, fallbacks, parallelism, and LangSmith tracing. This makes it ideal for prototyping and deploying LLM applications.***
