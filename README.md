@@ -1,5 +1,5 @@
 # **Lanchain Setup**
-<h1>Pip Commands</h1>
+<h2>Pip Commands</h2>
 
 `pip install langchain`
 
@@ -30,7 +30,7 @@ If you want to install from source, you can do so by cloning the repo and be sur
 
 
 
-<h1>Conda Command</h1>
+<h2>Conda Command</h2>
 
 `conda install langchain -c conda-forge`
 
