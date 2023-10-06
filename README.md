@@ -308,3 +308,35 @@ LangChain Expression Language (LCEL) is a way to write LangChain chains in a dec
 Summary in simple terms:
 
 ***LCEL is a way to write LangChain chains that is easier to use and more efficient. It provides automatic support for async, batch, and streaming operations, fallbacks, parallelism, and LangSmith tracing. This makes it ideal for prototyping and deploying LLM applications.***
+
+
+# InterFace
+
+The Runnable protocol is a set of rules that LangChain components follow.This is a standard interface with a few different methods, which makes it easy to define custom chains as well as making it possible to invoke them in a standard way. This makes it easy to create new LangChain components and to use them together.
+
+The three methods in the Runnable protocol are:
+
+1. stream(): This method sends the response back to the user in chunks.
+2. invoke(): This method runs the chain on a single input.
+3. batch(): This method runs the chain on a list of inputs.
+
+**Using the Runnable protocol, you can create custom LangChain chains that can do anything you need them to do**
+<hr>
+
+These also have corresponding async methods:
+
+* astream: stream back chunks of the response async
+* ainvoke: call the chain on an input async
+* abatch: call the chain on a list of inputs async
+* astream_log: stream back intermediate steps as they happen, in addition to the final response
+<hr>
+
+The type of the input varies by component:
+<table>
+    <tr>
+        <th>Component</th>
+        <th>Input Type</th>
+    </tr>
+    
+</table>
+
