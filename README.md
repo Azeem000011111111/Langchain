@@ -1,4 +1,4 @@
-# Installation
+# Lanchain Setup
 <h1>Pip Commands</h1>
 
 `pip install langchain`
@@ -22,7 +22,7 @@ If you want to install from source, you can do so by cloning the repo and be sur
 
 `pip install -e .`
 
-<h1>Installation</h1>
+<h5>Installation</h5>
 
 **To install LangChain run:**
 
@@ -53,7 +53,7 @@ If you want to install from source, you can do so by cloning the repo and be sur
 
 `pip install -e .`
 
-<h1>Installation</h1>
+<h5>Installation</h5>
 
 **To install LangChain run:**
 
