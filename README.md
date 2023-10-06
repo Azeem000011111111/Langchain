@@ -123,8 +123,11 @@ LangChain also provides a standard interface for both LLMs and ChatModels, with 
 * predict_messages: Takes in a list of messages, returns a message.
 
 ***This makes it easy to build chatbots and other conversational applications using LangChain.***
+<hr>
 
 **let see an example with and LLM and Chat model:**
+
+
 `from langchain.llms import OpenAI`
 `from langchain.chat_models import ChatOpenAI`
 
@@ -148,10 +151,10 @@ Next, let's use the predict method to run over a string input.
 `text = "What would be a good company name for a company that makes colorful socks?"`
 
 `llm.predict(text)`
-> # >> Feetful of Fun
+> >>> Feetful of Fun
 
 `chat_model.predict(text)`
-> # >> Socks O'Color
+> >>> Socks O'Color
 
 Finally, let's use the predict_messages method to run over a list of messages.
 
