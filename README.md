@@ -95,6 +95,19 @@ LangChain is a framework for building language model applications. It provides m
 
 <hr>
 
+<h2>LLM</h2>
+
+LangChain has two types of language models:
+
+1. LLMs: take a string as input and return a string
+2. ChatModels: take a list of messages as input and return a message
+
+A ChatMessage has two required components:
+
+* content: the content of the message
+* role: the role of the entity from which the ChatMessage is coming from
+
+***This is useful for building chatbots and other conversational applications.***
 
 
 
