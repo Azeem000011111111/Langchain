@@ -239,17 +239,17 @@ Prompt templates are a powerful way to use LangChain to generate text. They allo
 
 ***we will write our own output parser - one that converts a comma separated list into a list.***
 
-`from langchain.schema import BaseOutputParser`
+    from langchain.schema import BaseOutputParser`
 
-"""class CommaSeparatedListOutputParser(BaseOutputParser): """
+    class CommaSeparatedListOutputParser(BaseOutputParser):
 
-    """Parse the output of an LLM call to a comma-separated list."""`
+    """Parse the output of an LLM call to a comma-separated list."""
 
 
-    def parse(self, text: str):
-        """Parse the output of an LLM call."""
-        return text.strip().split(", ")
-
-"""CommaSeparatedListOutputParser().parse("hi, bye")"""
+        def parse(self, text: str):
+            """Parse the output of an LLM call."""
+            return text.strip().split(", ")
+ 
+    CommaSeparatedListOutputParser().parse("hi, bye")`
 
 >>> ['hi', 'bye']
