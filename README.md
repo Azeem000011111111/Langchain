@@ -1,63 +1,63 @@
-# **Lanchain Setup**
+# **Langchain Setup**
 <h2>Pip Commands</h2>
 
-`pip install langchain`
+    pip install langchain
 
 This will install the bare minimum requirements of LangChain. A lot of the value of LangChain comes when integrating it with various model providers, datastores, etc. By default, the dependencies needed to do that are NOT installed. However, there are two other ways to install LangChain that do bring in those dependencies.
 
 To install modules needed for the common LLM providers, run:
 
-`pip install langchain[llms]`
+    pip install langchain[llms]
 
 To install all modules needed for all integrations, run:
 
-`pip install langchain[all]`
+    pip install langchain[all]
 
 Note that if you are using zsh, you'll need to quote square brackets when passing them as an argument to a command, for example:
 
-`pip install 'langchain[all]'`
+    pip install 'langchain[all]'
 
 From source
 If you want to install from source, you can do so by cloning the repo and be sure that the directory is PATH/TO/REPO/langchain/libs/langchain running:
 
-`pip install -e .`
+    pip install -e .
 
 <h5>Installation</h5>
 
 **To install LangChain run:**
 
-`pip install langchain`
+    pip install langchain
 
 
 
 <h2>Conda Command</h2>
 
-`conda install langchain -c conda-forge`
+    conda install langchain -c conda-forge
 
 This will install the bare minimum requirements of LangChain. A lot of the value of LangChain comes when integrating it with various model providers, datastores, etc. By default, the dependencies needed to do that are NOT installed. However, there are two other ways to install LangChain that do bring in those dependencies.
 
 To install modules needed for the common LLM providers, run:
 
-`pip install langchain[llms]`
+    pip install langchain[llms]
 
 To install all modules needed for all integrations, run:
 
-`pip install langchain[all]`
+    pip install langchain[all]
 
 Note that if you are using zsh, you'll need to quote square brackets when passing them as an argument to a command, for example:
 
-`pip install 'langchain[all]'`
+    pip install 'langchain[all]'
 
 From source
 If you want to install from source, you can do so by cloning the repo and be sure that the directory is PATH/TO/REPO/langchain/libs/langchain running:
 
-`pip install -e .`
+    pip install -e .
 
 <h5>Installation</h5>
 
 **To install LangChain run:**
 
-`conda install langchain -c conda-forge`
+    conda install langchain -c conda-forge
 <hr>
 
 <h2>Environment setup</h2>
@@ -66,17 +66,17 @@ Using LangChain will usually require integrations with one or more model provide
 
 First we'll need to install their Python package:
 
-`pip install openai`
+    pip install openai
 
 Accessing the API requires an API key, which you can get by creating an account and heading here. Once we have a key we'll want to set it as an environment variable by running:
 
-`export OPENAI_API_KEY="..."`
+    export OPENAI_API_KEY="..."
 
 If you'd prefer not to set an environment variable you can pass the key in directly via the openai_api_key named parameter when initiating the OpenAI LLM class:
 
-`from langchain.llms import OpenAI`
+    from langchain.llms import OpenAI    
 
-`llm = OpenAI(openai_api_key="...")`
+    llm = OpenAI(openai_api_key="...")
 
 <hr>
 
@@ -128,16 +128,16 @@ LangChain also provides a standard interface for both LLMs and ChatModels, with 
 **let see an example with and LLM and Chat model:**
 
 
-`from langchain.llms import OpenAI`
-`from langchain.chat_models import ChatOpenAI`
+    from langchain.llms import OpenAI    
+    from langchain.chat_models import ChatOpenAI
 
-`llm = OpenAI()`
-`chat_model = ChatOpenAI()`
+    llm = OpenAI()
+    chat_model = ChatOpenAI()
 
-`llm.predict("hi!")`
+    llm.predict("hi!")
 > >>> "Hi"
 
-`chat_model.predict("hi!")`
+    chat_model.predict("hi!")
 
 > >>> "Hi"
 
@@ -149,26 +149,26 @@ The OpenAI and ChatOpenAI objects are basically just configuration objects. You 
 
 ***Next, let's use the predict method to run over a string input.***
 
-`text = "What would be a good company name for a company that makes colorful socks?"`
+    text = "What would be a good company name for a company that makes colorful socks?"
 
-`llm.predict(text)`
+    llm.predict(text)
 > >>> Feetful of Fun
 
-`chat_model.predict(text)`
+    chat_model.predict(text)
 > >>> Socks O'Color
 
 ***Finally, let's use the predict_messages method to run over a list of messages.***
 
-`from langchain.schema import HumanMessage`
+    from langchain.schema import HumanMessage
 
-`text = "What would be a good company name for a company that makes colorful socks?"`
+    text = "What would be a good company name for a company that makes colorful socks?"
 
-`messages = [HumanMessage(content=text)]`
+    messages = [HumanMessage(content=text)]
 
-`llm.predict_messages(messages)`
+    llm.predict_messages(messages)   
 > >>> Feetful of Fun
 
-`chat_model.predict_messages(messages)`
+    chat_model.predict_messages(messages)
 > >>> Socks O'Color
 
 
@@ -191,10 +191,10 @@ Most LLM applications use prompt templates to provide additional context to the 
 
 ***Example of using a prompt template to generate a single string:***
 
-`from langchain.prompts import PromptTemplate`
+    from langchain.prompts import PromptTemplate
 
-`prompt = PromptTemplate.from_template("What is a good name for a company that makes {product}?")`
-`prompt.format(product="colorful socks")`
+    prompt = PromptTemplate.from_template("What is a good name for a company that makes             {product}?")
+    prompt.format(product="colorful socks")
 
 Output:
 
@@ -203,17 +203,18 @@ Output:
 ***Example of using a prompt template to generate a list of messages:***
 
 
-`from langchain.prompts.chat import ChatPromptTemplate`
+    from langchain.prompts.chat import ChatPromptTemplate
 
-`template = "You are a helpful assistant that translates {input_language} to {output_language}."`
-`human_template = "{text}"`
+    template = "You are a helpful assistant that translates {input_language} to             
+           {output_language}."
+    human_template = "{text}"
 
-`chat_prompt = ChatPromptTemplate.from_messages([
-    ("system", template),
-    ("human", human_template),
-])`
+    chat_prompt = ChatPromptTemplate.from_messages([
+        ("system", template),
+        ("human", human_template),
+    ])
 
-`chat_prompt.format_messages(input_language="English", output_language="French", text="I love programming.")`
+    chat_prompt.format_messages(input_language="English", output_language="French", text="I         love programming.")
 
 Output:
 
