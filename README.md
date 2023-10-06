@@ -108,7 +108,66 @@ A ChatMessage has two required components:
 * role: the role of the entity from which the ChatMessage is coming from
 
 ***This is useful for building chatbots and other conversational applications.***
+<br>
+
+LangChain provides several objects to easily distinguish between different roles in a conversation:
+
+1. HumanMessage: A ChatMessage coming from a human/user.
+2. AIMessage: A ChatMessage coming from an AI/assistant.
+3. SystemMessage: A ChatMessage coming from the system.
+4. FunctionMessage: A ChatMessage coming from a function call.
+
+LangChain also provides a standard interface for both LLMs and ChatModels, with two methods:
+
+* predict: Takes in a string, returns a string.
+* predict_messages: Takes in a list of messages, returns a message.
+
+***This makes it easy to build chatbots and other conversational applications using LangChain.***
+
+**let see an example with and LLM and Chat model:**
+`from langchain.llms import OpenAI`
+`from langchain.chat_models import ChatOpenAI`
+
+`llm = OpenAI()`
+`chat_model = ChatOpenAI()`
+
+`llm.predict("hi!")`
+> >>> "Hi"
+
+`chat_model.predict("hi!")`
+
+> >>> "Hi"
 
 
 
+
+The OpenAI and ChatOpenAI objects are basically just configuration objects. You can initialize them with parameters like temperature and others, and pass them around.
+
+Next, let's use the predict method to run over a string input.
+
+`text = "What would be a good company name for a company that makes colorful socks?"`
+
+`llm.predict(text)`
+> # >> Feetful of Fun
+
+`chat_model.predict(text)`
+> # >> Socks O'Color
+
+Finally, let's use the predict_messages method to run over a list of messages.
+
+`from langchain.schema import HumanMessage`
+
+`text = "What would be a good company name for a company that makes colorful socks?"
+messages = [HumanMessage(content=text)]`
+
+`llm.predict_messages(messages)`
+> # >> Feetful of Fun
+
+`chat_model.predict_messages(messages)`
+> # >> Socks O'Color
+
+
+**The predict() and predict_messages() methods in LangChain can take keyword arguments to override the settings that were configured when the object was created. This is useful for adjusting the temperature, which controls the creativity of the generated text.**
+
+**For example, you could pass in temperature=0 to generate more predictable text, or temperature=1 to generate more creative text. You can also pass in other keyword arguments, such as length to control the length of the generated text.**
 
