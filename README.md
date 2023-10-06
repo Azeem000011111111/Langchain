@@ -241,7 +241,8 @@ Prompt templates are a powerful way to use LangChain to generate text. They allo
 
 `from langchain.schema import BaseOutputParser`
 
-"""class CommaSeparatedListOutputParser(BaseOutputParser):
+"""class CommaSeparatedListOutputParser(BaseOutputParser): """
+
     """Parse the output of an LLM call to a comma-separated list."""`
 
 
@@ -249,6 +250,6 @@ Prompt templates are a powerful way to use LangChain to generate text. They allo
         """Parse the output of an LLM call."""
         return text.strip().split(", ")
 
-CommaSeparatedListOutputParser().parse("hi, bye")"""
+"""CommaSeparatedListOutputParser().parse("hi, bye")"""
 
 >>> ['hi', 'bye']
