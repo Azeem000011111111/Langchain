@@ -176,3 +176,55 @@ The OpenAI and ChatOpenAI objects are basically just configuration objects. You 
 
 **For example, you could pass in temperature=0 to generate more predictable text, or temperature=1 to generate more creative text. You can also pass in other keyword arguments, such as length to control the length of the generated text.**
 
+
+
+
+<h2>Prompt Templates</h2>
+
+
+Most LLM applications use prompt templates to provide additional context to the LLM. Prompt templates can be used to generate a single string, or a list of messages.
+
+***Advantages of using prompt templates:***
+
+1. You can partial out variables, meaning you can format only some of the variables at a time.
+2. You can compose prompt templates together, easily combining different templates into a single prompt.
+
+***Example of using a prompt template to generate a single string:***
+
+`from langchain.prompts import PromptTemplate`
+
+`prompt = PromptTemplate.from_template("What is a good name for a company that makes {product}?")`
+`prompt.format(product="colorful socks")`
+
+Output:
+
+> > "What is a good name for a company that makes colorful socks?"
+
+***Example of using a prompt template to generate a list of messages:***
+
+
+`from langchain.prompts.chat import ChatPromptTemplate`
+
+`template = "You are a helpful assistant that translates {input_language} to {output_language}."`
+`human_template = "{text}"`
+
+`chat_prompt = ChatPromptTemplate.from_messages([
+    ("system", template),
+    ("human", human_template),
+])`
+
+`chat_prompt.format_messages(input_language="English", output_language="French", text="I love programming.")`
+
+Output:
+
+>> [
+SystemMessage(content="You are a helpful assistant that translates English to French.", additional_kwargs={}),
+HumanMessage(content="I love programming.")
+]
+
+Conclusion:
+
+Prompt templates are a powerful way to use LangChain to generate text. They allow you to provide additional context to the LLM, and to generate more complex and informative responses
+
+
+
