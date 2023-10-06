@@ -1,4 +1,4 @@
-# **Langchain Setup**
+# **Langchain Setup and Usage**
 <h2>Pip Commands</h2>
 
     pip install langchain
