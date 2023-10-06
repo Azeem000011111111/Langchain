@@ -146,7 +146,7 @@ LangChain also provides a standard interface for both LLMs and ChatModels, with 
 
 The OpenAI and ChatOpenAI objects are basically just configuration objects. You can initialize them with parameters like temperature and others, and pass them around.
 
-Next, let's use the predict method to run over a string input.
+***Next, let's use the predict method to run over a string input.***
 
 `text = "What would be a good company name for a company that makes colorful socks?"`
 
@@ -160,14 +160,15 @@ Finally, let's use the predict_messages method to run over a list of messages.
 
 `from langchain.schema import HumanMessage`
 
-`text = "What would be a good company name for a company that makes colorful socks?"
-messages = [HumanMessage(content=text)]`
+`text = "What would be a good company name for a company that makes colorful socks?"`
+
+`messages = [HumanMessage(content=text)]`
 
 `llm.predict_messages(messages)`
-> # >> Feetful of Fun
+> >>> Feetful of Fun
 
 `chat_model.predict_messages(messages)`
-> # >> Socks O'Color
+> >>> Socks O'Color
 
 
 **The predict() and predict_messages() methods in LangChain can take keyword arguments to override the settings that were configured when the object was created. This is useful for adjusting the temperature, which controls the creativity of the generated text.**
