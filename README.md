@@ -429,6 +429,17 @@ This code will print the following output:
 
 
 <hr>
+<h3>Difference between stream(), invoke(), and batch()</h3>
+
+1. The main difference between stream(), invoke(), and batch() is that stream() streams back chunks of the response, while invoke() and batch() return the entire output of the chain at once.
+
+2. Another difference is that invoke() takes a single input as an argument, while batch() takes a list of inputs as an argument.
+
+** Simpler explanation **
+
+1. stream(): Returns a generator object that can be used to iterate over the response in chunks. This is useful for large responses, as it can help to reduce the load on the client and improve performance.
+2. invoke(): Calls the chain on an input and returns the output of the chain. This can be used to generate text
+
 
 
 **Using the Runnable protocol, you can create custom LangChain chains that can do anything you need them to do**
