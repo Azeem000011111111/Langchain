@@ -451,6 +451,82 @@ These also have corresponding async methods:
 * ainvoke: call the chain on an input async
 * abatch: call the chain on a list of inputs async
 * astream_log: stream back intermediate steps as they happen, in addition to the final response
+
+
+
+The asynchronous versions of the stream(), invoke(), and batch() methods are astream(), ainvoke(), abatch(), and astream_log(), respectively.
+
+These methods work the same way as their synchronous counterparts, except that they return an asyncio.Future object instead of the result directly. This means that you can use them in asynchronous code without blocking the main thread.
+
+Example
+
+Here is an example of how to use the astream() method:
+
+	import asyncio
+	import langchain
+
+	async def main():
+  		# Create a LangChain chain.
+  		chain = langchain.Chain()
+  		chain.add_node(langchain.PromptNode(prompt="Write a novel about a cat."))
+  		chain.add_node(langchain.TextGenerationNode(model="gpt-neo"))
+
+  		# Invoke the chain and pass in the input "Write a novel about a cat.".
+  		output_generator = chain.astream({"text": "Write a novel about a cat."})
+
+  		# Iterate over the response in chunks and print each chunk to the console.
+  		async for chunk in output_generator:
+    		print(chunk)
+
+	if __name__ == "__main__":
+  	    asyncio.run(main())
+
+This code will iterate over the response in chunks and print each chunk to the console. The main thread will not be blocked while the chain is running, so you can continue to do other work in the meantime.
+
+***Difference between synchronous and asynchronous methods***
+
+* The main difference between the synchronous and asynchronous methods is that the synchronous methods block the main thread until they have finished executing, while the asynchronous methods do not.
+
+* This means that you can use the asynchronous methods in asynchronous code without blocking the main thread. This can be useful for improving the performance and responsiveness of your application.
+
+**astream_log():**
+
+The astream_log() method streams back intermediate steps as they happen, in addition to the final response. This can be useful for debugging or for monitoring the progress of the chain.
+
+Example
+
+Here is an example of how to use the astream_log() method:
+
+
+	import asyncio
+	import langchain
+
+	async def main():
+  		# Create a LangChain chain.
+  		chain = langchain.Chain()
+  		chain.add_node(langchain.PromptNode(prompt="Write a novel about a cat."))
+  		chain.add_node(langchain.TextGenerationNode(model="gpt-neo"))
+
+ 		 # Invoke the chain and pass in the input "Write a novel about a cat.".
+  		output_generator = chain.astream_log({"text": "Write a novel about a cat."})
+
+  		# Iterate over the response and print each chunk to the console.
+  		async for chunk in output_generator:
+    			print(chunk)
+
+	if __name__ == "__main__":
+ 		 asyncio.run(main())
+Us
+This code will print each chunk of the response to the console, as well as the intermediate steps. This can be useful for debugging or for monitoring the progress of the chain.
+
+Conclusion
+
+* The asynchronous versions of the stream(), invoke(), and batch() methods are useful for writing asynchronous code with LangChain. They allow you to call chains and receive the response without blocking the main thread.
+
+* The astream_log() method is useful for debugging or for monitoring the progress of a chain. It streams back intermediate steps as they happen, in addition to the final response.
+
+
+
 <hr>
 
 The type of the input varies by component:
