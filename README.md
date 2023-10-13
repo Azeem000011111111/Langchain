@@ -516,7 +516,7 @@ Here is an example of how to use the astream_log() method:
 
 	if __name__ == "__main__":
  		 asyncio.run(main())
-Us
+
 This code will print each chunk of the response to the console, as well as the intermediate steps. This can be useful for debugging or for monitoring the progress of the chain.
 
 Conclusion
