@@ -320,6 +320,117 @@ The three methods in the Runnable protocol are:
 2. invoke(): This method runs the chain on a single input.
 3. batch(): This method runs the chain on a list of inputs.
 
+
+**stream():**
+
+The stream() method in LangChain streams back chunks of the response. It takes an input as an argument and returns a generator object. The generator object can then be used to iterate over the response in chunks.
+
+This can be useful for large responses, as it can help to reduce the load on the client and improve performance.
+
+Here is an example of how to use the stream() method:
+
+
+	import langchain
+
+	# Create a LangChain chain.
+	chain = langchain.Chain()
+	chain.add_node(langchain.PromptNode(prompt="Write a novel about a cat."))
+	chain.add_node(langchain.TextGenerationNode(model="gpt-neo"))
+
+	# Invoke the chain and pass in the input "Write a novel about a cat.".
+	output_generator = chain.stream({"text": "Write a novel about a cat."})
+
+	# Iterate over the response in chunks and print each chunk to the console.
+	for chunk in output_generator:
+  	print(chunk)
+This code will iterate over the response in chunks and print each chunk to the console. This can be useful for large responses, as it can help to reduce the load on the client and improve performance.
+
+
+**invoke():**
+
+The invoke() method in LangChain calls the chain on an input. It takes an input as an argument and returns the output of the chain.
+
+This can be used to generate text, translate languages, write code, and perform other tasks.
+
+Here is an example of how to use the invoke() method:
+
+
+	import langchain
+
+	# Create a LangChain chain.
+	chain = langchain.Chain()
+	chain.add_node(langchain.PromptNode(prompt="Write a poem about a cat."))
+	chain.add_node(langchain.TextGenerationNode(model="gpt-neo"))
+
+	# Invoke the chain and pass in the input "Write a poem about a cat.".
+	output = chain.invoke({"text": "Write a poem about a cat."})
+
+	# Print the output.
+	print(output)
+ 
+This code will print the following output:
+
+>> Oh, cats are furry creatures,
+>> With big eyes and tiny feet.
+>> They love to play and chase the string,
+>> And purr when they're asleep.
+
+>> Cats are curious and independent,
+>> But they also love to cuddle.
+>> They're the perfect companions,
+>> For people of all ages.
+
+
+
+
+
+**batch():**
+
+The batch() method in LangChain calls the chain on a list of inputs. It takes a list of inputs as an argument and returns a list of outputs.
+
+This can be useful for tasks such as generating multiple poems or translating multiple sentences.
+
+Here is an example of how to use the batch() method:
+
+
+	import langchain
+
+	# Create a LangChain chain.
+	chain = langchain.Chain()
+	chain.add_node(langchain.PromptNode(prompt="Write a poem about {}."))
+	chain.add_node(langchain.TextGenerationNode(model="gpt-neo"))
+
+	# Invoke the chain on a list of inputs.
+	outputs = chain.batch([{"text": "cats"}, {"text": "dogs"}])
+
+	# Print the outputs.
+	for output in outputs:
+  		print(output)
+
+This code will print the following output:
+
+>> Oh, cats are furry creatures,
+>> With big eyes and tiny feet.
+>> They love to play and chase the string,
+>> And purr when they're asleep.
+
+>> Cats are curious and independent,
+>> But they also love to cuddle.
+>> They're the perfect companions,
+>> For people of all ages.
+
+>> Dogs are loyal and loving creatures,
+>> With wagging tails and wet noses.
+>> They love to play fetch and go for walks,
+>> And cuddle up with their owners at the end of the day.
+
+>> Dogs are always happy to see their owners,
+>> And they make great companions for people of all ages.
+
+
+<hr>
+
+
 **Using the Runnable protocol, you can create custom LangChain chains that can do anything you need them to do**
 <hr>
 
